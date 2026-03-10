@@ -436,6 +436,8 @@ def parse_lines(lines):
 
 def create_m3u_file(all_channels, filename="test.m3u"):
     """生成带分类的 M3U 文件"""
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    i = 0
     with open(filename, "w", encoding="utf-8") as f:
         f.write('#EXTM3U x-tvg-url="https://kakaxi-1.github.io/IPTV/epg.xml"\n\n')
         
@@ -456,8 +458,10 @@ def create_m3u_file(all_channels, filename="test.m3u"):
                     sorted_urls = preferred_ipv4 + other_ipv4 + preferred_ipv6 + other_ipv6
                     
                     logo = f"https://kakaxi-1.github.io/IPTV/LOGO/{ch}.png"
+                    if i == 0:
+                        i+=1
+                        f.write(f'#EXTINF:-1 tvg-name="收藏" tvg-logo="{logo}" group-title="🕘️更新时间",{timestamp}\n')
                     f.write(f'#EXTINF:-1 tvg-name="{ch}" tvg-logo="{logo}" group-title="{group}",{ch}\n')
-                    
                     for url in sorted_urls:
                         f.write(f"{url}\n")
     
