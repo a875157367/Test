@@ -10,7 +10,7 @@ from urllib.parse import urljoin, urlparse
 import socket as socket_lib
 import ssl
 import json
-
+import test2
 
 @dataclass(frozen=True)
 class ProxyConfig:
@@ -351,6 +351,7 @@ def http_get(url: str, **kwargs: Any) -> str:
 
 
 if __name__ == "__main__":
+	test2.main()
 	target_url = "http://66capanoglu.com:8080/player_api.php?username=zehra@senol&password=15082022&action=get_live_categories"
 	target_stream = "http://66capanoglu.com:8080/player_api.php?username=zehra@senol&password=15082022&action=get_live_streams"
 	try:
