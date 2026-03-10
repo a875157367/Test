@@ -584,7 +584,10 @@ def main():
         "https://raw.githubusercontent.com/Heiwk/iptv67/refs/heads/main/iptv.m3u",
     ]
     
-    urls = default_sources
+    user_sources = [
+    ]
+    
+    urls = default_sources + user_sources
 
     all_channels = defaultdict(list)
     source_stats = {}
