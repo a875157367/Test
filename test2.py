@@ -434,7 +434,7 @@ def parse_lines(lines):
 
     return channels_dict
 
-def create_m3u_file(all_channels, filename="iptv.m3u"):
+def create_m3u_file(all_channels, filename="test.m3u"):
     """生成带分类的 M3U 文件"""
     with open(filename, "w", encoding="utf-8") as f:
         f.write('#EXTM3U x-tvg-url="https://kakaxi-1.github.io/IPTV/epg.xml"\n\n')
