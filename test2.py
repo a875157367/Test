@@ -574,7 +574,7 @@ def generate_statistics_log(all_channels, source_stats, user_sources, m3u_filena
 # 主函数
 # =============================================
 
-def main():
+def actionM3u():
     # 在这里添加您的稳定IPTV源URL
     default_sources = [
         # "https://ghfast.top/https://raw.githubusercontent.com/moonkeyhoo/iptv-api/master/output/result.m3u",
