@@ -654,5 +654,5 @@ def main():
     print(f"   播放源排序：IPv4优选 → IPv4其他 → IPv6优选 → IPv6其他")
     print(f"🔒 隐私保护: 日志文件中的源URL已进行模糊处理")
 
-# if __name__ == "__main__":
-    
+if __name__ == "__main__":
+    main()

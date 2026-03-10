@@ -10,7 +10,7 @@ from urllib.parse import urljoin, urlparse
 import socket as socket_lib
 import ssl
 import json
-import test2
+
 
 @dataclass(frozen=True)
 class ProxyConfig:
@@ -376,4 +376,3 @@ if __name__ == "__main__":
 			"remote proxy endpoint:",
 			f"{PROXY_CONFIG.remote_addr}:{PROXY_CONFIG.remote_port}",
 		)
-		test2.main()
