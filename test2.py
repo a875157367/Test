@@ -459,8 +459,8 @@ def create_m3u_file(all_channels, filename="test.m3u"):
                     
                     logo = f"https://kakaxi-1.github.io/IPTV/LOGO/{ch}.png"
                     if i == 0:
-                        i+=1
-                        f.write(f'#EXTINF:-1 tvg-name="收藏" tvg-logo="{logo}" group-title="🕘️更新时间",{timestamp}\n')
+                        f.write(f'#EXTINF:-1 tvg-name="{timestamp}" tvg-logo="{logo}" group-title="🕘️更新时间",{ch}\n')
+                        i=i + 1
                     f.write(f'#EXTINF:-1 tvg-name="{ch}" tvg-logo="{logo}" group-title="{group}",{ch}\n')
                     for url in sorted_urls:
                         f.write(f"{url}\n")
