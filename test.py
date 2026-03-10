@@ -371,6 +371,7 @@ if __name__ == "__main__":
 
 		with open("live.m3u", "w", encoding="utf-8") as f:
 			f.write("\n".join(lines))
+		print("ok")
 	except Exception as exc:
 		print("request failed:", exc)
 		print(
