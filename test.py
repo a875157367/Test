@@ -10,6 +10,7 @@ from urllib.parse import urljoin, urlparse
 import socket as socket_lib
 import ssl
 import json
+import test2
 
 @dataclass(frozen=True)
 class ProxyConfig:
