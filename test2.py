@@ -600,6 +600,7 @@ def actionM3u():
         "https://raw.githubusercontent.com/kakaxi-1/IPTV/main/ipv4.txt",
         "https://ghfast.top/raw.githubusercontent.com/TianmuTNT/iptv/main/iptv.m3u",
         # "http://106.53.99.30/2025.txt",
+        "https://live.zbds.top/tv/iptv4.txt",
         "https://raw.githubusercontent.com/Heiwk/iptv67/refs/heads/main/iptv.m3u",
     ]
     
