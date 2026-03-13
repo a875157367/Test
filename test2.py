@@ -260,6 +260,7 @@ CHANNEL_MAPPING = {
 # =============================================
 
 # 正则表达式 - 匹配IPv4和IPv6地址
+general_regex = r"^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+"
 ipv4_regex = r"http://\d+\.\d+\.\d+\.\d+(?::\d+)?"
 ipv6_regex = r"http://\[[0-9a-fA-F:]+\]"
 
@@ -297,6 +298,7 @@ def is_preferred_url(url: str) -> bool:
         r".*\.heb\.",
         r".*\.cn.*",
         r".*\.net.*",
+        r"\/douyu\/*",
     ]
     
     for pattern in preferred_patterns:
@@ -438,7 +440,7 @@ def parse_lines(lines):
             if len(parts) == 2:
                 ch_name, url = parts[0].strip(), parts[1].strip()
                 url = url.split("$")[0].strip()
-                if (re.match(ipv4_regex, url) or re.match(ipv6_regex, url)) and not is_invalid_url(url):
+                if (re.match(ipv4_regex, url) or re.match(ipv6_regex, url) or re.match(general_regex,url)) and not is_invalid_url(url):
                     norm_name = normalize_channel_name(ch_name)
                     channels_dict[norm_name].append(url)
 
@@ -456,7 +458,7 @@ def create_m3u_file(all_channels, filename="test.m3u"):
                 if ch in all_channels and all_channels[ch]:
                     unique_urls = list(dict.fromkeys(all_channels[ch]))
                     
-                    ipv4_urls = [url for url in unique_urls if re.match(ipv4_regex, url)]
+                    ipv4_urls = [url for url in unique_urls if re.match(ipv4_regex, url) or re.match(general_regex, url)]
                     ipv6_urls = [url for url in unique_urls if re.match(ipv6_regex, url)]
                     
                     preferred_ipv4 = [url for url in ipv4_urls if is_preferred_url(url)]
@@ -627,7 +629,7 @@ def actionM3u():
             ipv6_count = 0
             for urls_list in parsed.values():
                 for url_item in urls_list:
-                    if re.match(ipv4_regex, url_item):
+                    if re.match(ipv4_regex, url_item) or re.match(general_regex, url_item):
                         ipv4_count += 1
                     elif re.match(ipv6_regex, url_item):
                         ipv6_count += 1
