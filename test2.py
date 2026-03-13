@@ -583,6 +583,7 @@ def actionM3u():
     default_sources = [
         # "https://ghfast.top/https://raw.githubusercontent.com/moonkeyhoo/iptv-api/master/output/result.m3u",
         "https://raw.githubusercontent.com/kakaxi-1/IPTV/main/ipv6.m3u",
+        "https://gh-proxy.org/https://github.com/kakaxi-1/IPTV/blob/main/ipv4.txt",
         "https://raw.githubusercontent.com/kakaxi-1/IPTV/main/ipv4.txt",
         "https://ghfast.top/raw.githubusercontent.com/TianmuTNT/iptv/main/iptv.m3u",
         # "http://106.53.99.30/2025.txt",
