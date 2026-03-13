@@ -14,7 +14,7 @@ import test2
 
 @dataclass(frozen=True)
 class ProxyConfig:
-	remote_addr: str = "nl-4.tr202513.com"
+	remote_addr: str = "ty-4.tr202513.com"
 	remote_port: int = 443
 	password: str = "6XOYipS4auCYCD9PJQ"
 	verify: bool = False
